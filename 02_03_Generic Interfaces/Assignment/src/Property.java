@@ -38,37 +38,13 @@ public class Property<T extends Comparable<T>> implements Inequality<T> {
 
     @Override
     public boolean isEqual(T other) {
-        if (t.compareTo(other) == 0){
+        if(t.compareTo(other) == 0){
             return true;
         }
-        else { 
-            return false;
-        }        
-    }
-
-    public boolean isNotEqualTo(T other){
-        if(t.compareTo(other) != 0){
-            return true;
-        }
-        else {
-            return false;
-        } 
-    }
-
-    public boolean greaterThanOrEqualTo(T other){
-        if(t.compareTo(other) == 0 || t.compareTo(other) == 1){
-            return true;
-        }else{
+        else{
             return false;
         }
-    }
-
-    public boolean lessThanOrEqualTo(T other){
-        if(t.compareTo(other) == 0 || t.compareTo(other) == -1){
-            return true;
-        }else{
-            return false;
-        }
+        
     }
 
 }
