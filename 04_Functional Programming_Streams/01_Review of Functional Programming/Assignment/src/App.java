@@ -2,12 +2,14 @@ import java.util.function.Function;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        double cFromOO = lawOfCosinesOO(1, 1, 90);
-        double cFromFPDumb = lawOfCosineFPDumb.apply(1.0, 1.0, 90.0);
-        var cFromFPSmart = lawOfCosinesSmart.apply(1.0).apply(1.0);
-        System.out.println(cFromOO);
-        System.out.println(cFromFPDumb);
-        System.out.println(cFromFPSmart);
+        // double cFromOO = lawOfCosinesOO(1, 1, 90);
+        // double cFromFPDumb = lawOfCosineFPDumb.apply(1.0, 1.0, 90.0);
+        // var cFromFPSmart = lawOfCosinesSmart.apply(1.0).apply(1.0);
+        double coco = lawOfCosinesAngleC.apply(9.0).apply(5.0).apply(8.0);
+        System.out.println(coco);
+        // System.out.println(cFromOO);
+        // System.out.println(cFromFPDumb);
+        // System.out.println(cFromFPSmart);
     }
 
     public static double lawOfCosinesOO(double a, double b, double angDegrees) {
@@ -38,8 +40,12 @@ public class App {
     public static Function<Double, Function<Double, Function<Double, Double>>> lawOfCosinesAngleC = (
             a) -> (b) -> (c) -> {
 
-                //angleC = acos((c^2 - a^2 - b^2) / (-2ab))
+                double aSq = a * a;
+                double bSq = b * b;
+                double cSq = c * c;
 
+                double angleC = Math.acos((cSq - aSq - bSq) / (-2 * a * b));
+                return angleC;
             };
 
 }
