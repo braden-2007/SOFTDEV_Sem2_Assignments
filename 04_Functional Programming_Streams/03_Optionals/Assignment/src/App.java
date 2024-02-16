@@ -3,12 +3,14 @@ import java.util.function.Function;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        //TODO:  make a function called subtract5 using lambda notation
-        //TODO: make a function called times5 using lambda notation
-        //TODO: make a function called subtract5Times5 using andThen
 
-        //TODO:  create an int called testNumber set to 1;
-        //TODO:  apply subtract5Times5 to testNumber
+        Function<Integer, Integer> subtract5 = (num) -> num - 5;
+        Function<Integer, Integer> times5 = (num) -> num - 5;
+        Function<Integer, Integer> subtract5times5 = subtract5.andThen(times5);
+
+        int testNumber = 1;
+        subtract5times5.apply(testNumber);
+        System.out.println(testNumber);
 
 
         //Lambda notation examples
