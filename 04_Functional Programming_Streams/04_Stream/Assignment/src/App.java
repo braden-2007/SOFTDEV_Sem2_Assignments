@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.function.Function;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -11,6 +12,18 @@ public class App {
         Integer cumulativeProduct = myList.stream().reduce(1, (a, b) -> a * b);
 
         //create  a list of strings.  
+
+
+        List<String> myClasses = List.of("EnGLISh", "JaPANese", "JeWELRy", "SoFT Dev", "US HistoRY", "AlGEbra", "MeTEORology");
+        Function<String, String> lilCase = (s) -> s.toLowerCase();
+
+        List<String> lowerCaseSchedule = myClasses.stream().map(lilCase).toList();
+        System.out.println(lowerCaseSchedule);
+
+
+
+
+
         //fill that list with your daily school schedule
         //write a Function<String, String> toLowerCase
         //the function will equal (s) -> s.toLowerCase();
