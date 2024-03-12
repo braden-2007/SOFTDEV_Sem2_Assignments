@@ -1,20 +1,17 @@
 // Create a DoubleProperty and a StringProperty similar to the Integer property from yesterday.  
 
 // Create a closure for Double property in App.java and one for StringProperty
-
-import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
         DoubleProperty myDouble = DoubleProperty.of(1.11);
-        Function<DoubleProperty, DoubleProperty> This_might_double_the_double_that_is_given_to_this_function = (double) -> {
-            myDouble.plus(mydouble);
+        Function<DoubleProperty, DoubleProperty> This_might_double_the_double_that_is_given_to_this_function = (Double) -> {
+            myDouble.plus(Double);
             return myDouble;
         };
-        myDouble.plus(This_might_double_the_double_that_is_given_to_this_function.of(5)).plus(This_might_double_the_double_that_is_given_to_this_function.of(5));
+        myDouble.plus(DoubleProperty.of(5.6)).plus(DoubleProperty.of(9.5));
         System.out.println(myDouble);
 
 
@@ -38,11 +35,11 @@ public class App {
 
 
         // //THIS BE OUR CLOSURE
-        IntegerProperty startProperty = IntegerProperty.of(15);
-        Function<IntegerProperty, IntegerProperty> addToStartProperty = (integer) -> {
-            startProperty.plus(integer);
-            return startProperty;
-        };
+        // IntegerProperty startProperty = IntegerProperty.of(15);
+        // Function<IntegerProperty, IntegerProperty> addToStartProperty = (integer) -> {
+        //     startProperty.plus(integer);
+        //     return startProperty;
+        // };
 
         // // Function<Integer, IntegerProperty> DivStartPropertyByInt = (integer) -> {
         // //     startProperty.set(startProperty.get() / integer);

@@ -16,11 +16,11 @@ public class App {
         //Lambda notation examples
         Function<Integer, Integer> add5 = (num) -> num + 5;
         Function<Integer, Integer> div2 = (num) -> num / 2;
-        // Function<Integer, Integer> add5Divide2 = (num) -> {
-        //     num = num + 5;
-        //     num = num / 5;
-        //     return num;
-        // };
+        Function<Integer, Integer> add5Divide2 = (num) -> {
+            num = num + 5;
+            num = num / 5;
+            return num;
+        };
 
         Function<Integer, Integer> add5Divide2UsingAndThen = add5.andThen(div2);
 
@@ -31,15 +31,15 @@ public class App {
         System.out.println(myIntOption);
         System.out.println(myIntAdd5Option);
         System.out.println(myIntAdd5Div2Option);
+        System.out.println(add5Divide2);
 
         Function<Integer, Optional<Integer>> add5Optional = (num) -> Optional.of(num + 5);
 
-        Optional<Integer> myflatmapEmptyExample = Optional.empty();
-        var myFlatmapExample = myIntOption.flatMap(add5Optional);
-        var myFlatmapExampleExampleTest = myflatmapEmptyExample.flatMap(add5Optional);
+        // Optional<Integer> myflatmapEmptyExample = Optional.empty();
+        // var myFlatmapExample = myIntOption.flatMap(add5Optional);
+        // var myFlatmapExampleExampleTest = myflatmapEmptyExample.flatMap(add5Optional);
 
-        System.out.println(myFlatmapExample);
-        System.out.println(myFlatmapExampleExampleTest);
+        // System.out.println(myFlatmapExampleExampleTest);
 
     }
 
