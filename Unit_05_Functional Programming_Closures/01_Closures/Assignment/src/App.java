@@ -14,6 +14,16 @@ public class App {
         myDouble.plus(DoubleProperty.of(5.6)).plus(DoubleProperty.of(9.5));
         System.out.println(myDouble);
 
+        StringProperty my_string = StringProperty.of("HI");
+        Function<StringProperty, StringProperty> This_might_String_that_double_that_is_given_to_this_function_that = (String) -> {
+            my_string.plus(String);
+            return my_string;
+        };
+
+        my_string.plus(StringProperty.of(" World")).plus(StringProperty.of(" twelve"));
+        System.out.println(my_string);
+
+
 
 
 
